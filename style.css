@@ -1,8 +1,8 @@
 /* A simple css reset */
 body,
-
-body{
+body {
     background-color: black;
+    color: white; /* Added to make card texts readable against black background */
 }
 
 html {
@@ -19,19 +19,73 @@ img {
     width: 100%;
 }
 
-/* The hero section styling- use your OWN Hero Image URL here */
+/* Updated to match your HTML class */
 .hero {
-    background-image: url('images/images.jpg');
-    height: 25vh;
-    background-size: cover;
-    background-position: center;
+    position: relative;
+    width: 100%;
+    height: 120px; /* Shrunk down to a slim strip */
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: rgb(7, 6, 6);
-    text-align: center;
-    position: relative;
 }
+
+#bannerVideo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 1;
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* 50% opacity black overlay */
+    z-index: 2;
+}
+
+/* Banner Content scaled down to fit the small strip */
+.banner-content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Spaces out your title, text, and button in a line */
+}
+
+.banner-content h1 {
+    font-size: 1.5rem; /* Scaled down */
+    margin: 0;
+}
+
+.banner-content p {
+    font-size: 1rem; /* Scaled down */
+    margin: 0;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 6px 15px; /* Shrunk padding */
+    background-color: #ff5e62;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+/* --- Rest of your original CSS code below --- */
 
 /* BIG text styling for the hero section text */
 .hero-text {
@@ -46,7 +100,8 @@ img {
     font-size: 2em;
     padding: 0.1em 3em;
     background-color: rgb(21, 26, 23);
-    box-shadow: 10 10 200px rgba(123,104,255,0.9),
+    /* Fixed missing syntax error at the end of box-shadow */
+    box-shadow: 0 10px 20px rgba(123,104,255,0.3); 
 }
 
 /* Three column grid with a nice big gap */
@@ -79,84 +134,10 @@ img {
     text-align: center;
 }
 
-.topic-card hover{
-    box-shadow: blue;
-}
-
-
 /* Styling for a footer section to take a bit of spcae at the bottom of the page */
 .footer{
     background-color: rgb(30, 32, 31);
     color: white;
     text-align: right;
     padding: 3em 3em;
-}
-
-<!--
-Source - https://stackoverflow.com/a/73925463
-Posted by Swapnil Sanghvi
-Retrieved 2026-06-19, License - CC BY-SA 4.0
--->
-
-#myVideo {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%; 
-  min-height: 100%;
-}
-
-.video-banner {
-    position: relative;
-    width: 100%;
-    height: 100vh; /* Use 100vh for full screen, or specify a fixed height like 500px */
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#bannerVideo {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    transform: translate(-50%, -50%);
-    object-fit: cover;
-    z-index: 1;
-}
-
-.video-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* 50% opacity black overlay */
-    z-index: 2;
-}
-
-.banner-content {
-    position: relative;
-    z-index: 3; /* Ensures text sits above the video and overlay */
-    text-align: center;
-    color: #ffffff;
-}
-
-.banner-content h1 {
-    font-size: 3rem;
-    margin-bottom: 15px;
-}
-
-.cta-button {
-    display: inline-block;
-    padding: 12px 30px;
-    background-color: #ff5e62;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 20px;
 }
